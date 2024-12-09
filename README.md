@@ -34,6 +34,7 @@ This project aims to develop a real-time forecasting and visualization system fo
 
 **Contributors**
 Dhwanit Gajjar
+
 Roger Chavarry
 
 **References**
