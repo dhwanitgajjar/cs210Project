@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Prediction Dashboard</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        form {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        input[type="number"] {
+            padding: 8px 10px;
+            width: 60px;
+            margin-left: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #forecast-output {
+            margin: 20px auto;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        .plot-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .plot-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Real-time Prediction Dashboard</h1>
+        <form id="forecast-form">
+            <label for="days">Number of Days to Predict:</label>
+            <input type="number" id="days" name="days" value="7" min="1" max="30">
+            <button type="submit">Get Forecast</button>
+        </form>
+        <div id="forecast-output"></div>
+
+        <h2>Model Performance</h2>
+        <div class="plot-container">
+            {% if plot_url %}
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Performance Plot">
+            {% else %}
+            <p>Loading performance metrics...</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('forecast-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const days = document.getElementById('days').value;
+
+            // Fetch forecast data
+            const response = await fetch('/forecast', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `days=${days}`
+            });
+            const data = await response.json();
+
+            // Display forecast data
+            const output = document.getElementById('forecast-output');
+            output.innerHTML = `<h3>Forecast for ${days} Days:</h3>`;
+            output.innerHTML += `<ul>${data.map(d => `<li><strong>${d.Date}</strong>: $${d.ForecastedRevenue.toFixed(2)}</li>`).join('')}</ul>`;
+        });
+    </script>
+</body>
+</html>
