@@ -33,6 +33,7 @@ This project aims to develop a real-time forecasting and visualization system fo
 * The real-time dashboard enabled stakeholders to query predictions dynamically with reduced computation time.
 
 **Contributors**
+
 Dhwanit Gajjar
 
 Roger Chavarry
