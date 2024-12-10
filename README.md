@@ -15,7 +15,7 @@ This project aims to develop a real-time forecasting and visualization system fo
 1) Forecasting: Enter the number of days to predict future sales and view the results dynamically.
 2) Performance Metrics: Visualize actual vs. fitted revenue trends using an interactive chart.
 
-**How to use app.py**
+**How to access the dashboard**
 ![image](https://github.com/user-attachments/assets/7e74c5ab-c51f-4139-998f-61a5c704e59b)
 Run the app.py file. Install the necessary libraries. When the terminal opens up, look for : **Running on http://127.0.0.1:5000**
 
