@@ -1,5 +1,35 @@
 # Sales Forecasting and Visualization for E-commerce using ARIMA
 
+## Setup Instructions
+
+### 1. Creating the Virtual Environment
+
+To isolate project dependencies, create a virtual environment:
+
+```
+python -m venv venv
+```
+
+### 2. Activating the Virtual Environment
+
+Activate the virtual environment with the following command:
+
+```
+source ./venv/bin/activate
+```
+
+### 3. Installing Required Libraries
+
+Install all necessary libraries by running:
+
+```
+pip install -r requirements.txt
+```
+
+### 4. Running the Prediction Notebook
+
+Open and execute the `sales_forecasting_CS210.ipynb` Jupyter Notebook cell by cell to train and evaluate the model.
+
 **Project Overview**
 
 This project aims to develop a real-time forecasting and visualization system for an e-commerce platform. It uses the ARIMA model for sales predictions and provides an interactive Flask-based dashboard to monitor performance metrics and gain actionable insights.
