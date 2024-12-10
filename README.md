@@ -17,8 +17,8 @@ This project aims to develop a real-time forecasting and visualization system fo
 
 **How to use app.py**
 ![image](https://github.com/user-attachments/assets/7e74c5ab-c51f-4139-998f-61a5c704e59b)
-Run the app.py file. Install the necessary libraries. When the terminal opens look for : **Running on http://127.0.0.1:5000**
-Right Click on it to open the dashboard
+Run the app.py file. Install the necessary libraries. When the terminal opens up, look for : **Running on http://127.0.0.1:5000**
+Hold Ctrl and left Click on it to access the dashboard.
 
 
 
