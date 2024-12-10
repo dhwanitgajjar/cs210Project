@@ -30,6 +30,12 @@ pip install -r requirements.txt
 
 Open and execute the `sales_forecasting_CS210.ipynb` Jupyter Notebook cell by cell to train and evaluate the model.
 
+**How to access the dashboard**
+![image](https://github.com/user-attachments/assets/7e74c5ab-c51f-4139-998f-61a5c704e59b)
+Run the app.py file. Install the necessary libraries. When the terminal opens up, look for : **Running on http://127.0.0.1:5000**
+
+Hold Ctrl and left Click on it to access the dashboard.
+
 **Project Overview**
 
 This project aims to develop a real-time forecasting and visualization system for an e-commerce platform. It uses the ARIMA model for sales predictions and provides an interactive Flask-based dashboard to monitor performance metrics and gain actionable insights.
@@ -45,11 +51,6 @@ This project aims to develop a real-time forecasting and visualization system fo
 1) Forecasting: Enter the number of days to predict future sales and view the results dynamically.
 2) Performance Metrics: Visualize actual vs. fitted revenue trends using an interactive chart.
 
-**How to access the dashboard**
-![image](https://github.com/user-attachments/assets/7e74c5ab-c51f-4139-998f-61a5c704e59b)
-Run the app.py file. Install the necessary libraries. When the terminal opens up, look for : **Running on http://127.0.0.1:5000**
-
-Hold Ctrl and left Click on it to access the dashboard.
 
 
 
