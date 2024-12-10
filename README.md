@@ -4,6 +4,8 @@
 
 This project aims to develop a real-time forecasting and visualization system for an e-commerce platform. It uses the ARIMA model for sales predictions and provides an interactive Flask-based dashboard to monitor performance metrics and gain actionable insights.
 
+**Check HowToUse.txt file** - Necessary Steps to run the project
+
 **Key Features**
 * Time Series Analysis: Seasonal trends and patterns in e-commerce sales are analyzed.
 * ARIMA Forecasting: Robust prediction of daily revenue trends.
