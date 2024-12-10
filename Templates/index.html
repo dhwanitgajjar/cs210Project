@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Prediction Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin: 20px 0;
+        }
+        .plot-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real-time Prediction Dashboard</h1>
+        <form id="forecast-form">
+            <label for="days">Number of Days to Predict:</label>
+            <input type="number" id="days" name="days" value="7" min="1" max="30">
+            <button type="submit">Get Forecast</button>
+        </form>
+        <div id="forecast-output"></div>
+
+        <h2>Model Performance</h2>
+        <div class="plot-container">
+            <img src="/performance" alt="Performance Plot">
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('forecast-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const days = document.getElementById('days').value;
+
+            // Fetch forecast data
+            const response = await fetch('/forecast', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `days=${days}`
+            });
+            const data = await response.json();
+
+            // Display forecast data
+            const output = document.getElementById('forecast-output');
+            output.innerHTML = `<h3>Forecast for ${days} Days:</h3>`;
+            output.innerHTML += `<ul>${data.map(d => `<li><strong>${d.Date}</strong>: $${d.ForecastedRevenue.toFixed(2)}</li>`).join('')}</ul>`;
+        });
+    </script>
+</body>
+</html>
