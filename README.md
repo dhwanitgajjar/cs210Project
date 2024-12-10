@@ -30,6 +30,8 @@ pip install -r requirements.txt
 
 Open and execute the `sales_forecasting_CS210.ipynb` Jupyter Notebook cell by cell to train and evaluate the model.
 
+### [Video Demo](https://youtu.be/SCHvOouNYck)
+
 **How to access the dashboard**
 ![image](https://github.com/user-attachments/assets/7e74c5ab-c51f-4139-998f-61a5c704e59b)
 Run the app.py file. Install the necessary libraries. When the terminal opens up, look for : **Running on http://127.0.0.1:5000**
